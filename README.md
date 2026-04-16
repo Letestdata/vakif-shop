@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # VAKIF JEWELLERY — Full-Stack React + PHP + MySQL Website
 
 ## 🏗️ Project Structure
@@ -214,3 +215,6 @@ Open browser DevTools (F12) → Console tab → place a test order.
 You will see either:
 - `[Email] EmailJS: sent ✓` — working correctly
 - `[Email] EmailJS failed` — check your keys in emailConfig.js
+=======
+# vakif-shop
+>>>>>>> ce62a53c541de25d9f5f156def2bcbeb87f92888
