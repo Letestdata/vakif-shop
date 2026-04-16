@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="description" content="Vakif Jewellery — Luxury Artificial Jewellery, Supur, Idar, Gujarat" />
+  <title>VAAKIF — Luxury Artificial Jewellery</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- EmailJS SDK — loaded early so it's always ready before checkout -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="vakif.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body, #root { height: 100%; background: #0a0a0a; }
+    body { font-family: 'Cormorant Garamond', Georgia, serif; overflow-x: hidden; }
+    #loading-screen {
+      position: fixed; inset: 0; background: #0a0a0a;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    #loading-screen .logo-load {
+      font-family: 'Cinzel', serif; font-size: 48px;
+      color: #D4AF37; letter-spacing: 10px;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+    #loading-screen .tagline-load {
+      font-family: 'Cormorant Garamond', serif;
+      color: #888; font-size: 16px; margin-top: 8px; letter-spacing: 4px;
+    }
+    #loading-screen .loader-bar {
+      width: 200px; height: 2px; background: #222;
+      margin-top: 40px; border-radius: 2px; overflow: hidden;
+    }
+    #loading-screen .loader-fill {
+      height: 100%; background: linear-gradient(90deg, #D4AF37, #F5E6C8);
+      width: 0; animation: load 1.8s ease forwards;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #D4AF3766; }
+      to   { text-shadow: 0 0 40px #D4AF37cc, 0 0 80px #D4AF3766; }
+    }
+    @keyframes load { to { width: 100%; } }
+  </style>
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="logo-load">VAAKIF</div>
+    <div class="tagline-load">LUXURY ARTIFICIAL JEWELLERY</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+  <div id="root"></div>
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const ls = document.getElementById('loading-screen');
+        if (ls) { ls.style.opacity = '0'; setTimeout(() => ls.remove(), 500); }
+      }, 1800);
+    });
+  </script>
+</body>
+</html>
